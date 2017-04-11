@@ -2,8 +2,8 @@
 自动控制viewController的textView和textField被键盘遮挡问题,引入.h即可
 
 适应各种界面view,scrollView,tabView等
-
-# #import "UIViewController+SXKeyboardViewControl.h"
+### 只需一步,引入头文件即可
+### #import "UIViewController+SXKeyboardViewControl.h"
 
 ### 示例效果图
 
