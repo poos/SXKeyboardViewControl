@@ -65,7 +65,7 @@
     CGRect keyboardFrame = ((NSValue *) notification.userInfo[UIKeyboardFrameEndUserInfoKey]).CGRectValue;
     if (keyboardFrame.origin.y == self.view.frame.size.height) {
         [UIView animateWithDuration:0.8f animations:^{
-            self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+            self.view.frame = CGRectMake(0, self.navigationController.navigationBarHidden?0:64, self.view.frame.size.width, self.view.frame.size.height);
         }];
         return;
     }
@@ -84,7 +84,7 @@
         }];
     } else {
         [UIView animateWithDuration:0.8f animations:^{
-            self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+            self.view.frame = CGRectMake(0, self.navigationController.navigationBarHidden?0:64, self.view.frame.size.width, self.view.frame.size.height);
         }];
     }
 }
