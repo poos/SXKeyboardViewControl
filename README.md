@@ -1,0 +1,2 @@
+# SXKeyboardViewControl
+自动控制viewController的textView和textField被键盘遮挡问题,引入.h即可
