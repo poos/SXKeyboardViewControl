@@ -7,8 +7,8 @@
 
 ### 示例效果图
 
-![img](https://github.com/poos/SXKeyboardViewControl/blob/master/Untitled3.gif)  
+![img](Untitled3.gif)  
 
-![img](https://github.com/poos/SXKeyboardViewControl/blob/master/Untitled2.gif)
+![img](Untitled2.gif)
 
-![img](https://github.com/poos/SXKeyboardViewControl/blob/master/Untitled.gif)
+![img](Untitled.gif)
