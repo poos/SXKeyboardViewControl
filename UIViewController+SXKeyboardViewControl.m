@@ -50,9 +50,8 @@
     return nil;
 }
 
-//键盘发生变化
 - (void)onKeyboardNotification:(NSNotification *)notification {
-    UIView *inputView = [self getInputView:self.view];
+    UIView *inputView = [self getInputView:self.view];;
     if (!inputView) {
         return;
     }
@@ -63,27 +62,23 @@
     }
     
     CGRect keyboardFrame = ((NSValue *) notification.userInfo[UIKeyboardFrameEndUserInfoKey]).CGRectValue;
-    if (keyboardFrame.origin.y == self.view.frame.size.height) {
+    if (keyboardFrame.origin.y == [UIScreen mainScreen].bounds.size.height) {
         [UIView animateWithDuration:0.8f animations:^{
             self.view.frame = CGRectMake(0, self.navigationController.navigationBarHidden?0:64, self.view.frame.size.width, self.view.frame.size.height);
         }];
         return;
     }
     
-    if (rect.origin.y+rect.size.height + 30 > keyboardFrame.origin.y) {
+    CGFloat addHeight = self.navigationController.navigationBarHidden?0:64;
+    if (rect.origin.y+rect.size.height+addHeight > keyboardFrame.origin.y) {
         CGFloat changHeight = -keyboardFrame.size.height;
-        if (rect.origin.y + rect.size.height - 160 < keyboardFrame.origin.y) {
-            changHeight = -160;
-        }
-        if (rect.origin.y + rect.size.height - 120 < keyboardFrame.origin.y) {
-            changHeight = -120;
+        if (rect.origin.y + rect.size.height - 140 < keyboardFrame.origin.y) {
+            changHeight = -140;
         }
         if (rect.origin.y + rect.size.height - 80 < keyboardFrame.origin.y) {
             changHeight = -80;
         }
-        if (rect.origin.y + rect.size.height - 40 < keyboardFrame.origin.y) {
-            changHeight = -40;
-        }
+
         
         [UIView animateWithDuration:0.8f animations:^{
             self.view.frame = CGRectMake(0, changHeight, self.view.frame.size.width, self.view.frame.size.height);
@@ -93,6 +88,7 @@
             self.view.frame = CGRectMake(0, self.navigationController.navigationBarHidden?0:64, self.view.frame.size.width, self.view.frame.size.height);
         }];
     }
+
 }
 
 
