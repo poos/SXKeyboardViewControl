@@ -70,13 +70,19 @@
         return;
     }
     
-    if (rect.origin.y+rect.size.height > keyboardFrame.origin.y) {
+    if (rect.origin.y+rect.size.height + 30 > keyboardFrame.origin.y) {
         CGFloat changHeight = -keyboardFrame.size.height;
-        if (rect.origin.y + rect.size.height - 140 < keyboardFrame.origin.y) {
-            changHeight = -140;
+        if (rect.origin.y + rect.size.height - 160 < keyboardFrame.origin.y) {
+            changHeight = -160;
+        }
+        if (rect.origin.y + rect.size.height - 120 < keyboardFrame.origin.y) {
+            changHeight = -120;
         }
         if (rect.origin.y + rect.size.height - 80 < keyboardFrame.origin.y) {
             changHeight = -80;
+        }
+        if (rect.origin.y + rect.size.height - 40 < keyboardFrame.origin.y) {
+            changHeight = -40;
         }
         
         [UIView animateWithDuration:0.8f animations:^{
